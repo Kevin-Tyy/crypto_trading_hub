@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeFlow</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--    Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+    <!--    Css-->
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .rubik-glitch-regular {
+            font-family: "Rubik Glitch", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="text-white h-screen w-full bg-[#242330]">
+<main class="w-full h-full flex flex-col justify-between">
+    <div>
+        <!-- Header -->
+        <nav class="flex justify-between p-6">
+            <div class="container">
+                <h1 class="text-3xl rubik-glitch-regular">TradeFlow</h1>
+            </div>
+            <div class="flex gap-4">
+                <a href="./login.jsp" class="py-3 px-10 rounded-lg bg-[#FFC31F]">Login</a>
+                <a href="./register.jsp" class="py-3 px-10 rounded-lg bg-white text-[#242330]">Sign up</a>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <div class="space-y-5 flex flex-col items-center mt-12">
+            <img src="./static/bank.png" alt="Bank Logo" class="w-20 h-20">
+            <h1 class="text-4xl max-w-2xl text-center leading-relaxed">Trade Smarter, Transfer Faster: Your Gateway to
+                Financial
+                Freedom!</h1>
+            <p class="text-center max-w-5xl leading-loose">"Welcome to TradeFlow, where seamless transactions meet
+                unparalleled security. Our platform empowers
+                users to effortlessly navigate the world of online trading and money transfers with confidence. With
+                lightning-fast execution and robust encryption protocols, your assets are safeguarded at every step.
+                Whether you're a seasoned investor or a first-time trader, our intuitive interface and expert support
+                ensure a smooth journey towards your financial goals. Join SwiftTrade today and experience the future of
+                finance at your fingertips."
+
+            </p>
+            <div class="flex gap-4 !mt-8">
+                <a href="./login.jsp" class="py-4 px-6 rounded-lg bg-[#FFC31F]">Login into your account</a>
+                <a href="./register.jsp" class="py-4 px-6 rounded-lg bg-white text-[#242330]">Sign up for a free
+                    account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex justify-center m-4">
+        <p class="text-center">&copy; 2024 TradeFlow. All Rights Reserved.</p>
+    </footer>
+
+</main>
+</body>
+
+</html>
