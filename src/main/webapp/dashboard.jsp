@@ -3,14 +3,14 @@
 <%@ page import="com.tradeflow.dao.UserDao" %>
 
 <%
-    UserDao userDao = new UserDaoImpl();
-    if (session.getAttribute("username") == null || userDao.getUserByUsername(session.getAttribute("username").toString()) == null) {
+    String username = (String) session.getAttribute("username");
+    if(username == null || username.isEmpty()) {
         response.sendRedirect("login.jsp");
     }
-
-    String username = (String) session.getAttribute("username");
+%>
+<%
+    UserDao userDao = new UserDaoImpl();
     User user = userDao.getUserByUsername(username);
-
 %>
 
 
@@ -50,14 +50,26 @@
             <div class="container">
                 <h1 class="text-3xl rubik-glitch-regular">TradeFlow</h1>
             </div>
-            <div class="space-y-10">
+            <div class="space-y-10 flex flex-col">
                 <a href="wallet.jsp">Your wallet</a>
-                <p>Transactions</p>
-                <p>Account</p>
-                <p>Settings</p>
-                <p>Help</p>
+                <a href="transaction.jsp">Transactions</a>
+                <a href="account.jsp">Account</a>
+                <a href="settings.jsp">Settings</a>
+                <a href="help.jsp">Help</a>
             </div>
-            <a href="register.jsp" class="py-3 px-10 rounded-lg bg-white text-[#242330]">Logout</a>
+            <form action="LogoutServlet" method="post">
+                <button class="py-3 px-10 rounded-lg bg-white text-[#242330] flex items-center gap-4">
+                    <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M14 4L17.5 4C20.5577 4 20.5 8 20.5 12C20.5 16 20.5577 20 17.5 20H14M3 12L15 12M3 12L7 8M3 12L7 16"
+                                  stroke="#242330" stroke-width="1.5" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                    <span>Logout</span></button>
+            </form>
 
         </div>
 

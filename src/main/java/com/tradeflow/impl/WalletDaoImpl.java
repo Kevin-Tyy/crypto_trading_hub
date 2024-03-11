@@ -15,7 +15,7 @@ import java.util.UUID;
 public class WalletDaoImpl implements WalletDao {
 
     DbUtility dbUtil;
-    private static final String SELECT_WALLET_BY_USER_ID = "SELECT * FROM Wallet WHERE userId = ?";
+    private static final String SELECT_WALLET_BY_USER_ID = "SELECT * FROM Wallets WHERE userId = ?";
 
 
     public WalletDaoImpl() {

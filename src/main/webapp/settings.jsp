@@ -6,12 +6,15 @@
 
 <%
     String username = (String) session.getAttribute("username");
+
+    if(username == null || username.isEmpty()) {
+        response.sendRedirect("login.jsp");
+    }
+
     UserDao userDao = new UserDaoImpl();
     User user = userDao.getUserByUsername(username);
 
-    if (session.getAttribute("username") == null) {
-        response.sendRedirect("login.jsp");
-    }
+
 
     Wallet wallet = new WalletDaoImpl().getWalletByUserId(user.getUserId());
 
@@ -95,12 +98,8 @@
             </div>
         </nav>
         <div class="bg-[#1e1d26] h-full flex-1 rounded-3xl p-10">
-            Your wallet
-        <div>
-            <h1>
-                Balance: <%= wallet.getWalletAddress()  %>
-            </h1>
-        </div>
+            Settings
+
         </div>
 
     </section>

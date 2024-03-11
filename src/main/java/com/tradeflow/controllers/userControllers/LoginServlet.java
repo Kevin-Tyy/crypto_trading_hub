@@ -32,14 +32,12 @@ public class LoginServlet extends HttpServlet {
             User user = userDao.getUserByEmail(email);
 
             if (user != null) {
-
                 if (PasswordHasher.verifyPassword(password, user.getPassword())) {
 
                     Wallet wallet = new WalletDaoImpl().getWalletByUserId(user.getUserId());
                     session.setAttribute("username", user.getUsername());
-
-//                    session.setAttribute("wallet", wallet);
-
+                    session.setAttribute("wallet", wallet);
+                    System.out.println("Boom");
                     response.sendRedirect("dashboard.jsp");
 
                 } else {
